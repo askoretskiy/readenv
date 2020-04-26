@@ -5,7 +5,11 @@ authors = ["Artem Skoretskiy <artem.skoretskiy@gmail.com>"]
 edition = "2018"
 license = "MIT"
 keywords = ["env", ".env", "dotenv", "12factor"]
+categories = ["command-line-utilities", "config", "development-tools"]
+description = "Simple program that reads .env file and use it to run given command"
 
+homepage = "https://github.com/askoretskiy/readenv/"
+repository = "https://github.com/askoretskiy/readenv.git"
 readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
