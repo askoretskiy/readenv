@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Artem Skoretskiy <artem.skoretskiy@gmail.com>"]
 edition = "2018"
 license = "MIT"
-keywords = ["env", ".env", "dotenv", "12factor"]
+keywords = ["env", "dotenv", "12factor"]
 categories = ["command-line-utilities", "config", "development-tools"]
 description = "Simple program that reads .env file and use it to run given command"
 
