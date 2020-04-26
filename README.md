@@ -7,7 +7,7 @@ Never load environment variables manually or pollute your interpreter profile ag
 ## How it works
 
 1. Read current environment variables
-2. Read `.env` file in current directory
+2. Read `.env` file in current or parent directory
 3. Extend current environment variables with ones read from `.env` file:
    * Environment variables take precedence over ones defined in `.env`
 4. Spawn `<COMMAND>` with generated environment variables
@@ -21,7 +21,7 @@ cargo install readenv
 
 ## Usage
 
-1. Create `.env` file in with `<KEY>=<VALUE>` structure.
+1. Create `.env` file in with `<KEY>=<VALUE>` structure in current or parent directory
 2. Run the app:
 
    ```bash
