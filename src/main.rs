@@ -9,16 +9,17 @@ fn main() {
         exit(1);
     }
 
-    let iter = dotenv::from_path_iter(".env");
+    let iter_result = dotenv::from_path_iter(".env");
 
-    if iter.is_err() {
-        println!("[renv] Failed to load .env file");
-    } else {
-        for item in iter.unwrap() {
-            let (key, value) = item.unwrap();
-            // Set env variable if not set or key is "PATH"
-            if env::var(&key).is_err() || &key == "PATH" {
-                env::set_var(&key, value);
+    match iter_result {
+        Err(_) => println!("[renv] Failed to load .env file"),
+        Ok(iter) => {
+            for item_result in iter {
+                let (key, value) = item_result.unwrap();
+                // Set env variable if key is "PATH" or not set
+                if &key == "PATH" || env::var(&key).is_err() {
+                    env::set_var(&key, value);
+                }
             }
         }
     }
