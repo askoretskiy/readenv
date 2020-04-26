@@ -9,11 +9,18 @@ fn main() {
         exit(1);
     }
 
-    // Extend ENV with content of `.env` file (do not overwrite existing)
-    let dotenv_result = dotenv::from_path(".env");
+    let iter = dotenv::from_path_iter(".env");
 
-    if dotenv_result.is_err() {
+    if iter.is_err() {
         println!("[renv] Failed to load .env file");
+    } else {
+        for item in iter.unwrap() {
+            let (key, value) = item.unwrap();
+            // Set env variable if not set or key is "PATH"
+            if env::var(&key).is_err() || &key == "PATH" {
+                env::set_var(&key, value);
+            }
+        }
     }
 
     // Try to execute and replace current process -- should quit here

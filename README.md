@@ -54,6 +54,39 @@ Now run Django server with one command:
 renv django-admin.py runserver
 ```
 
+### Virtualenv
+
+[Virtualenv](https://virtualenv.pypa.io/en/latest/) is a nice tool to isolate Python dependencies for a project.
+
+To switch to given virtualenv one has to use command `. <VENV>/bin/activate`.
+
+Let's create `.env` file (given virtualenv directory is `.venv`):
+
+```bash
+echo "VIRTUAL_ENV=$PWD/.venv" >> .env
+echo "PATH=$PWD/.venv/bin:\${PATH}" >> .env
+```
+
+Now check Python interpreter:
+
+```bash
+renv which python
+```
+
+Result should be:
+
+```bash
+$PWD/.venv/bin/python
+```
+
+Try pip:
+
+```bash
+renv pip freeze
+```
+
+Result should be the list of dependencies installed in your virtualenv.
+
 ## Design considerations
 
 [12-factor App methodology](https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology) is great but could be boring.
@@ -81,12 +114,3 @@ Solution:
 ## Kudos
 
 Thanks team of [dotenv](https://github.com/dotenv-rs/dotenv) library for the most of work ;-)
-
-## TODO
-
-* Overwrite `PATH` variable to support this:
-
-```bash
-VIRTUAL_ENV=${PWD}/.venv
-PATH=${PWD}/.venv/bin:${PATH}
-```
