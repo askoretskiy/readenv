@@ -1,5 +1,5 @@
 [package]
-name = "renv"
+name = "readenv"
 version = "0.1.0"
 authors = ["Artem Skoretskiy <artem.skoretskiy@gmail.com>"]
 edition = "2018"
@@ -8,10 +8,15 @@ keywords = ["env", ".env", "dotenv", "12factor"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[[bin]]
+name = "renv"
+path = "src/main.rs"
+
 [dependencies]
 dotenv = "0.15.0"
 exec = "0.3.1"
 
 [profile.release]
-opt-level = "s"
-lto = "thin"
+opt-level = "z"
+lto = "fat"
+panic = "abort"
