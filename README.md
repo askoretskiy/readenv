@@ -81,3 +81,12 @@ Solution:
 ## Kudos
 
 Thanks team of [dotenv](https://github.com/dotenv-rs/dotenv) library for the most of work ;-)
+
+## TODO
+
+* Overwrite `PATH` variable to support this:
+
+```bash
+VIRTUAL_ENV=${PWD}/.venv
+PATH=${PWD}/.venv/bin:${PATH}
+```

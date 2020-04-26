@@ -10,7 +10,7 @@ fn main() {
     }
 
     // Extend ENV with content of `.env` file (do not overwrite existing)
-    let dotenv_result = dotenv::from_filename(".env");
+    let dotenv_result = dotenv::from_path(".env");
 
     if dotenv_result.is_err() {
         println!("[renv] Failed to load .env file");
