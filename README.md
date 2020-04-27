@@ -101,7 +101,7 @@ That tool should be a drop-in replacement for any app, so it:
 
 Also, it would be nice to:
 
-* Have application size
+* Have small application size
 * Have low RAM footprint
 * Do not depend on shell used
 * Be safe
