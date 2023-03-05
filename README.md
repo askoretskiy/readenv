@@ -8,9 +8,7 @@ Never load environment variables manually or pollute your interpreter profile ag
 
 1. Read current environment variables
 2. Read `.env` file in current or parent directory
-3. Extend current environment variables with ones read from `.env` file:
-   * Environment variables take precedence over ones defined in `.env`, except:
-     * `PATH` (it is always present so has to be overwritten)
+3. Extend current environment variables with ones read from `.env` file
 4. Spawn `<COMMAND>` with generated environment variables
 5. Replace current process with spawned one
 

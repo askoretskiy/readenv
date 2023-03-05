@@ -16,10 +16,7 @@ fn main() {
         Ok(iter) => {
             for item_result in iter {
                 let (key, value) = item_result.unwrap();
-                // Set env variable if key is "PATH" or not set
-                if &key == "PATH" || env::var(&key).is_err() {
-                    env::set_var(&key, value);
-                }
+                env::set_var(&key, value);
             }
         }
     }
