@@ -9,7 +9,7 @@ fn main() {
         exit(1);
     }
 
-    let iter_result = dotenv::from_filename_iter(".env");
+    let iter_result = dotenvy::from_filename_iter(".env");
 
     match iter_result {
         Err(_) => println!("[renv] Failed to load .env file"),

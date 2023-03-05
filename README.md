@@ -112,4 +112,4 @@ Solution:
 
 ## Kudos
 
-Thanks team of [dotenv](https://github.com/dotenv-rs/dotenv) library for the most of work ;-)
+Thanks team of [dotenv](https://github.com/dotenv-rs/dotenv) and [dotenv](https://github.com/allan2/dotenvy) library for the most of work ;-)

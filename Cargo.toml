@@ -1,6 +1,6 @@
 [package]
 name = "readenv"
-version = "0.2.6"
+version = "0.3.0"
 authors = ["Artem Skoretskiy <artem.skoretskiy@gmail.com>"]
 edition = "2018"
 license = "MIT"
@@ -19,7 +19,7 @@ name = "renv"
 path = "src/main.rs"
 
 [dependencies]
-dotenv = "0.15.0"
+dotenvy = "0.15.6"
 exec = "0.3.1"
 
 [profile.release]
